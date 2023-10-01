@@ -29,7 +29,7 @@ static simulated function ClientReceive(
 defaultproperties
 {
      DecapitationString="Yeeeee Haw!!"
-     HeadShotSound=Sound'tk_LilLady.LilLady.yehaw'
+     HeadShotSound=Sound'mm_LilLady.LilLady.yehaw'
      bIsUnique=True
      bFadeMessage=True
      DrawColor=(B=0,G=0)

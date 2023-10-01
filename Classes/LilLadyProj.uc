@@ -22,8 +22,8 @@ simulated function PostBeginPlay()
 {
 	if (Level.NetMode != NM_DedicatedServer)
 	{
-		SmokeTrail = Spawn(class'tk_LilLady.LilLadyTrail',self);
-		Corona = Spawn(class'tk_LilLady.LilLadyCorona',self);
+		SmokeTrail = Spawn(class'mm_LilLady.LilLadyTrail',self);
+		Corona = Spawn(class'mm_LilLady.LilLadyCorona',self);
 	}
 
 	Dir = vector(Rotation);
@@ -66,7 +66,7 @@ simulated function Explode(vector HitLocation, vector HitNormal)
 
  	if (Role == ROLE_Authority)
 	{
-		bingo = Spawn(class'tk_LilLady.LilLadyBlows',,,HitLocation + HitNormal*16,rotator(HitNormal));
+		bingo = Spawn(class'mm_LilLady.LilLadyBlows',,,HitLocation + HitNormal*16,rotator(HitNormal));
 		bingo.RemoteRole=ROLE_SimulatedProxy;
 	}
 
@@ -89,7 +89,7 @@ defaultproperties
      MaxSpeed=15000.000000
      Damage=90.000000
      MomentumTransfer=10000.000000
-     MyDamageType=Class'tk_LilLady.DamTypeLilLady'
+     MyDamageType=Class'mm_LilLady.DamTypeLilLady'
      ExplosionDecal=Class'XEffects.LinkBoltScorch'
      LightType=LT_Steady
      LightEffect=LE_QuadraticNonIncidence

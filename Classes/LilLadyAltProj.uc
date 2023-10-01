@@ -15,7 +15,7 @@ simulated function PostBeginPlay()
 	Super.PostBeginPlay();
 
 	if (Level.NetMode != NM_DedicatedServer)
-		AltSmokeTrail = Spawn(class'tk_LilLady.LilLadyAltTrail',self);
+		AltSmokeTrail = Spawn(class'mm_LilLady.LilLadyAltTrail',self);
 
 	Velocity = Vector(Rotation);
 	Acceleration = Velocity * 3000.0;
@@ -31,7 +31,7 @@ simulated function PostBeginPlay()
 simulated function Explode(vector HitLocation, vector HitNormal)
 {
 	if (EffectIsRelevant(Location,false))
-		Spawn(class'tk_LilLady.LilLadyAltBlows',,, HitLocation, rotator(HitNormal));
+		Spawn(class'mm_LilLady.LilLadyAltBlows',,, HitLocation, rotator(HitNormal));
 
 	BlowUp(HitLocation);
 
@@ -79,13 +79,13 @@ simulated function ProcessTouch(Actor Other, Vector HitLocation)
 
 defaultproperties
 {
-     DamageTypeHead=Class'tk_LilLady.DamTypeHeadShot'
+     DamageTypeHead=Class'mm_LilLady.DamTypeHeadShot'
      Speed=15000.000000
      MaxSpeed=16000.000000
      Damage=120.000000
      DamageRadius=10.000000
      MomentumTransfer=100.000000
-     MyDamageType=Class'tk_LilLady.DamTypeAltLilLady'
+     MyDamageType=Class'mm_LilLady.DamTypeAltLilLady'
      ExplosionDecal=Class'XEffects.LinkScorch'
      DrawType=DT_StaticMesh
      StaticMesh=StaticMesh'WeaponStaticMesh.FlakChunk'
